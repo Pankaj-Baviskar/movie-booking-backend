@@ -17,6 +17,9 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   .catch(err => console.log(err));
 
 // Define routes here
+app.get('/', (req, res) => {
+  res.send('Welcome to the Movie Booking API');
+});
 app.use('/api/auth', require('./routes/auth'));
 
 // Start the server
